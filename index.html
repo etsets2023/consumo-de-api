@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumindo API</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <h1>DncWeather</h1>
+        <div class="header_topicos">
+            <p>Endereços</p>
+            <p>Previsão do tempo</p>
+        </div>
+    </header>
+
+    <section class="formulario">
+        <div class="formulario_chamada">
+            <h2>Descubra Mais com Precisão: Previsões do Tempo e endereços em tempo real.</h2>
+            <img src="./imagens/nuvens.png" alt="">
+        </div>
+        <form>
+            <div>
+                <label for="nome">Primeiro nome:</label>
+                <input type="text" name="nome" id="nome" placeholder="Insira seu primeiro nome" required >
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Insira seu e-mail" required>
+            </div>
+            <div>
+                <label for="cep">Digite o CEP:</label>
+                <input type="text" name="cep" id="cep" value="" placeholder="Insira o CEP" required>
+            </div>
+        </form>
+        <button onclick="getAddressByCep()" style="width: 200px; margin: 0 auto; margin-top: -30px;">Buscar CEP</button>
+
+        <form>
+            <div class="input_tempo">
+                <div>
+                    <label for="lat">Digite a latitude:</label>
+                    <input type="text" name="lat" id="latitude" placeholder="Latitude">
+                </div>
+                <div>
+                    <label for="long">Digite a longitude:</label>
+                    <input type="text" name="long" id="longitude" placeholder="Longitude">
+                </div>
+            </div>   
+        </form>    
+        <button onclick="getPrevisao()" style="width: 200px; margin: 0 auto; margin-top: -30px;">Acessar previsão</button>
+    </section>
+
+    <section class="resultado_cep">
+        <div class="header_resultado_cep">
+            <h2>Resultado da busca por CEP:</h2>
+            <img src="./imagens/resultado_cep.png" alt="">
+        </div>  
+        <div class="nav_resultado_cep">
+            <div>
+                <label class="label_resultado_cep" for="rua" style="border-radius: 18px 0 0 0;">Logradouro/nome:</label>
+                <input type="text" value="" id="rua" name="rua" readonly style="padding: 10px 25px;">
+            </div>
+            <div>
+                <label class="label_resultado_cep" for="bairro">Bairro/Distrito:</label>
+                <input type="text" value="" id="bairro" name="bairro" readonly style="padding: 10px 25px;">
+            </div>
+            <div>
+                <label class="label_resultado_cep" for="cidade" style="border-radius: 0 18px 0 0;">Localidade/UF:</label>
+                <input type="text" value="" id="cidade" name="cidade" readonly style="padding: 10px 25px;">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="resultado_cep">
+        <div class="header_resultado_cep">
+            <h2>Resultado da região:</h2>
+            <img src="./imagens/resultado_tempo.png" alt="">
+        </div>  
+        <div id="resposta">
+            Previsão de tempo de acordo com a região 24°C
+        </div>
+    </section>
+
+    <footer>
+        <p>Termos de Uso | Política de Privacidade</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
